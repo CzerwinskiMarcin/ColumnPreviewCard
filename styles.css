@@ -1,0 +1,127 @@
+html {
+    margin: 0;
+    padding: 0;
+
+    --cardRadius: .5rem;
+    --veryLightGray: hsl(0, 0%, 95%);
+    --transparentWhite: hsla(0, 0%, 100%, 0.75);
+
+    --orange: hsl(31, 77%, 52%);
+    --lightCyan: hsl(184, 100%, 22%);
+    --darkCyan: hsl(179, 100%, 13%);
+}
+
+* {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 2rem auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 3rem 3rem 3.5rem;
+
+    background: #cdcdcd;
+}
+
+.card--orange {
+    background-color: var(--orange);
+}
+
+.card--light-cyan {
+    background-color: var(--lightCyan);
+}
+
+.card--dark-cyan {
+    background-color: var(--darkCyan);
+
+}
+
+.card:first-child {
+    border-top-left-radius: var(--cardRadius);
+    border-top-right-radius: var(--cardRadius);
+}
+
+.card:last-child {
+    border-bottom-left-radius: var(--cardRadius);
+    border-bottom-right-radius: var(--cardRadius);
+}
+
+.card__header {
+    margin-bottom: 1rem;
+    color: var(--veryLightGray);
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.card__text {
+    padding-bottom: 1rem;
+    color: var(--transparentWhite);
+
+    line-height: 1.5rem;
+}
+
+.button {
+    width: 10rem;
+
+    margin: 0;
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    border-radius: 5rem;
+
+    background: white;
+
+    text-transform: capitalize;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.15;
+
+    overflow: visible;
+}
+
+.button--orange {
+    color: var(--orange);
+}
+
+.button--light-cyan {
+    color: var(--lightCyan);
+}
+
+.button--dark-cyan {
+    color: var(--darkCyan);
+}
+
+.button:hover {
+    cursor: pointer;
+
+    background-color: transparent;
+
+    color: white;
+}
+
+
+@media only screen and (min-width: 850px) {
+    .main-container {
+        flex-direction: row;
+    }
+
+    .card:first-child {
+        border-radius: var(--cardRadius) 0 0 var(--cardRadius);
+    }
+
+    .card:last-child {
+        border-radius: 0 var(--cardRadius) var(--cardRadius) 0;
+    }
+
+    .card__text {
+        margin-bottom: 5rem;
+    }
+}
